@@ -8,6 +8,7 @@ export default async function Page() {
     if (!session?.user) {
         redirect("api/auth/signin?callbackUrl=/profile");
     }
+    console.log(session.user)
 
     return (
         <pre>{JSON.stringify(session, null, 2)}</pre>

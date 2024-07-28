@@ -17,8 +17,11 @@ import {
     Tooltip, TooltipContent, TooltipProvider, TooltipTrigger
 } from "@/components/ui/tooltip";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { usePathname } from 'next/navigation';
+import { redirect, usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import SignOutButton from "./signout-button";
+import { signOut } from "@/auth";
+import Header from "./header";
 
 const links = [
     { href: "/dashboard", label: "Dashboard", icon: Home },
@@ -36,7 +39,7 @@ function generateBreadcrumbs(pathname: string) {
 
 export default function NavLinks() {
     const pathname = usePathname();
-    const breadcrumbs = [ ...generateBreadcrumbs(pathname)];
+    const breadcrumbs = [...generateBreadcrumbs(pathname)];
 
     return (
         <>
@@ -119,40 +122,7 @@ export default function NavLinks() {
                         ))}
                     </BreadcrumbList>
                 </Breadcrumb>
-                <div className="relative ml-auto flex-1 md:grow-0">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                    <Input
-                        type="search"
-                        placeholder="Search..."
-                        className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
-                    />
-                </div>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button
-                            variant="outline"
-                            size="icon"
-                            className="overflow-hidden rounded-full"
-                        >
-                            <Image
-                                src="https://api.dicebear.com/9.x/pixel-art/png"
-                                width={36}
-                                height={36}
-                                alt="Avatar"
-                                className="overflow-hidden rounded-full"
-                            />
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>Settings</DropdownMenuItem>
-                        <DropdownMenuItem>Support</DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>Logout</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-                <ThemeToggle />
+                <Header />
             </header>
         </>
     );
