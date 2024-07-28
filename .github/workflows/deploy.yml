@@ -1,4 +1,4 @@
-name: nextjs-cloud-run
+name: Deploy to Google Cloud Run
 
 on:
   push:
