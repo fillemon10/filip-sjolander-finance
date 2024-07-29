@@ -9,9 +9,9 @@ import {
     Truck,
 } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "~/app/_components/ui/badge"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "~/app/_components/ui/button"
 import {
     Card,
     CardContent,
@@ -19,7 +19,7 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
+} from "~/app/_components/ui/card"
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
@@ -28,14 +28,14 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "~/app/_components/ui/dropdown-menu"
 import {
     Pagination,
     PaginationContent,
     PaginationItem,
-} from "@/components/ui/pagination"
-import { Progress } from "@/components/ui/progress"
-import { Separator } from "@/components/ui/separator"
+} from "~/app/_components/ui/pagination"
+import { Progress } from "~/app/_components/ui/progress"
+import { Separator } from "~/app/_components/ui/separator"
 import {
     Table,
     TableBody,
@@ -43,13 +43,13 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "~/app/_components/ui/table"
 import {
     Tabs,
     TabsContent,
     TabsList,
     TabsTrigger,
-} from "@/components/ui/tabs"
+} from "~/app/_components/ui/tabs"
 export default function Page() {
     return (
         <>
@@ -171,7 +171,7 @@ export default function Page() {
                                             <TableCell>
                                                 <div className="font-medium">Liam Johnson</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    liam@example.com
+                                                    liam~example.com
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
@@ -191,7 +191,7 @@ export default function Page() {
                                             <TableCell>
                                                 <div className="font-medium">Olivia Smith</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    olivia@example.com
+                                                    olivia~example.com
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
@@ -211,7 +211,7 @@ export default function Page() {
                           <TableCell>
                             <div className="font-medium">Liam Johnson</div>
                             <div className="hidden text-sm text-muted-foreground md:inline">
-                              liam@example.com
+                              liam~example.com
                             </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
@@ -231,7 +231,7 @@ export default function Page() {
                                             <TableCell>
                                                 <div className="font-medium">Noah Williams</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    noah@example.com
+                                                    noah~example.com
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
@@ -251,7 +251,7 @@ export default function Page() {
                                             <TableCell>
                                                 <div className="font-medium">Emma Brown</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    emma@example.com
+                                                    emma~example.com
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
@@ -271,7 +271,7 @@ export default function Page() {
                                             <TableCell>
                                                 <div className="font-medium">Liam Johnson</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    liam@example.com
+                                                    liam~example.com
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
@@ -291,7 +291,7 @@ export default function Page() {
                                             <TableCell>
                                                 <div className="font-medium">Olivia Smith</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    olivia@example.com
+                                                    olivia~example.com
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
@@ -311,7 +311,7 @@ export default function Page() {
                                             <TableCell>
                                                 <div className="font-medium">Emma Brown</div>
                                                 <div className="hidden text-sm text-muted-foreground md:inline">
-                                                    emma@example.com
+                                                    emma~example.com
                                                 </div>
                                             </TableCell>
                                             <TableCell className="hidden sm:table-cell">
@@ -441,7 +441,7 @@ export default function Page() {
                                 <div className="flex items-center justify-between">
                                     <dt className="text-muted-foreground">Email</dt>
                                     <dd>
-                                        <a href="mailto:">liam@acme.com</a>
+                                        <a href="mailto:">liam~acme.com</a>
                                     </dd>
                                 </div>
                                 <div className="flex items-center justify-between">
