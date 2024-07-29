@@ -26,9 +26,9 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
-import { ChartContainer, ChartTooltip, ChartTooltipContent, } from "@/components/ui/chart"
-import { Separator } from "@/components/ui/separator"
+} from "~/app/_components/ui/card"
+import { ChartContainer, ChartTooltip, ChartTooltipContent, } from "~/app/_components/ui/chart"
+import { Separator } from "~/app/_components/ui/separator"
 
 export default function Page() {
     return (
