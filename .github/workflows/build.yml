@@ -26,6 +26,17 @@ jobs:
 
       - uses: oven-sh/setup-bun@v2
 
+      - name: "Create env file"
+        run: |
+          touch .env
+          echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
+          echo NODE_ENV=${{ secrets.NODE_ENV }} >> .env
+          echo NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }} >> .env
+          echo NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }} >> .env
+          echo AUTH_GITHUB_ID=${{ secrets.AUTH_GITHUB_ID }} >> .env
+          echo AUTH_GITHUB_SECRET=${{ secrets.AUTH_GITHUB_SECRET }} >> .env
+          cat .env
+
       # run any `bun` or `bunx` command
       - run: bun install
       - run: bun run build
