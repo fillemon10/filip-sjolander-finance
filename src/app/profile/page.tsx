@@ -11,6 +11,6 @@ export default async function Page() {
     console.log(session.user)
 
     return (
-        <pre>{JSON.stringify(session, null, 2)}</pre>
+        <pre>{JSON.stringify(session , null, 2)}</pre>
     )
 }
