@@ -17,6 +17,9 @@ const config = {
         ],
     },
     output: "standalone",
+    experimental: {
+        ppr: 'incremental',
+    },
 };
 
 export default config;

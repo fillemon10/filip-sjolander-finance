@@ -37,6 +37,6 @@ jobs:
           echo AUTH_GITHUB_SECRET=${{ secrets.AUTH_GITHUB_SECRET }} >> .env
           cat .env
 
-      # run any `bun` or `bunx` command
       - run: bun install
+      - run: bun run lint
       - run: bun run build

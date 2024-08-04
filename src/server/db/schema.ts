@@ -128,3 +128,57 @@ export const verificationTokens = createTable(
     compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
   })
 );
+
+export const financialAccounts = createTable(
+  "financial_account",
+  {
+    id: serial("id").primaryKey(),
+    name: varchar("name", { length: 255 }).notNull(),
+    userId: varchar("user_id", { length: 255 })
+      .notNull()
+      .references(() => users.id),
+  },
+  (fa) => ({
+    userIdIdx: index("financial_account_user_id_idx").on(fa.userId),
+  })
+);
+
+export const monthlyBudgets = createTable(
+  "monthly_budget",
+  {
+    id: serial("id").primaryKey(),
+    amount: integer("amount").notNull(),
+    month: integer("month").notNull(),
+    year: integer("year").notNull(),
+    financialAccountId: integer("financial_account_id")
+      .notNull()
+      .references(() => financialAccounts.id),
+  },
+  (mb) => ({
+    monthYearIdx: index("monthly_budget_month_year_idx").on(
+      mb.month,
+      mb.year
+    ),
+    financialAccountIdIdx: index("monthly_budget_financial_account_id_idx").on(
+      mb.financialAccountId
+    ),
+  })
+);
+
+export const expenses = createTable(
+  "expense",
+  {
+    id: serial("id").primaryKey(),
+    amount: integer("amount").notNull(),
+    date: timestamp("date", { withTimezone: true }).notNull(),
+    monthlyBudgetsId: integer("monthly_budget_id").notNull().references
+      (() =>
+        monthlyBudgets.id
+      ),
+  },
+  (expense) => ({
+    monthlyBudgetsIdIdx: index("expense_monthly_budget_id_idx").on(
+      expense.monthlyBudgetsId
+    ),
+  })
+);
