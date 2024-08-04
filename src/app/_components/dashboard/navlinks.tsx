@@ -109,14 +109,12 @@ export default function NavLinks() {
                 <Breadcrumb className="hidden md:flex">
                     <BreadcrumbList>
                         {breadcrumbs.map((breadcrumb, index) => (
-                            <>
-                                <BreadcrumbItem>
-                                    <BreadcrumbLink asChild>
-                                        <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
-                                    </BreadcrumbLink>
-                                </BreadcrumbItem>
-                                {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-                            </>
+                            <BreadcrumbItem key={breadcrumb.href}>
+                                <BreadcrumbLink asChild>
+                                    <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
+                                </BreadcrumbLink>
+                                {index < breadcrumbs.length - 1 && <BreadcrumbSeparator key={`sep-${breadcrumb.href}`} />}
+                            </BreadcrumbItem>
                         ))}
                     </BreadcrumbList>
                 </Breadcrumb>

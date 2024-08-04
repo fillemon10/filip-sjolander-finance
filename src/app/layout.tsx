@@ -7,7 +7,7 @@ import { ThemeProvider } from "~/app/_components/theme-provider";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-}) 
+})
 
 export const metadata: Metadata = {
   title: "Finance",
@@ -26,6 +26,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+
         <TRPCReactProvider>
           <ThemeProvider
             attribute="class"
@@ -33,9 +34,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-          {children}
+            {children}
           </ThemeProvider>
-          </TRPCReactProvider>
+        </TRPCReactProvider>
+
       </body>
     </html>
   );

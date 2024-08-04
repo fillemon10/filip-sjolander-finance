@@ -5,7 +5,7 @@ import {
   sessions,
   users,
   verificationTokens,
-} from "~/server/db/schema"; 
+} from "~/server/db/schema";
 import { db } from "~/server/db"
 import type { Provider } from "next-auth/providers"
 import Github from "next-auth/providers/github";
@@ -35,6 +35,10 @@ export const { handlers, auth, signOut, signIn } = NextAuth({
     async session({ session, user }) {
       session.user.id = user.id
       return session
+    },
+    authorized: async ({ auth }) => {
+      // Logged in users are authenticated, otherwise redirect to login page
+      return !!auth
     },
   },
   pages: {
